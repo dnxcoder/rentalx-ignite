@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { SpecificationRepository } from "../modules/cars/repositories/SpecificationRepository";
 import { CreateSpecificationService } from "../modules/cars/services/CreateSpecificationService";
+import { ListCategoryService } from "../modules/cars/services/ListCategoryService";
+import { ListSpecificationService } from "../modules/cars/services/ListSpecificationService";
 
 const speficationsRoutes = Router();
 
@@ -17,6 +19,14 @@ speficationsRoutes.post("/", (request, response) => {
   return response.status(201).send();
 });
 
-speficationsRoutes.get("/", (request, response) => {});
+speficationsRoutes.get("/", (request, response) => {
+  const listSpecificationService = new ListSpecificationService(
+    specificationRepository
+  );
+
+  const listSpecifications = listSpecificationService.execute();
+
+  return response.json(listSpecifications).send();
+});
 
 export { speficationsRoutes };
