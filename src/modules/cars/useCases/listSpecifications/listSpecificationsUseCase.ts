@@ -1,5 +1,5 @@
 import { SpecificationRepository } from "../../repositories/implementations/SpecificationRepository";
-import { Specification } from "../../model/Specification";
+import { Specification } from "../../entities/Specification";
 
 class ListSpecificationsUseCase {
   private specificationRepository: SpecificationRepository;
