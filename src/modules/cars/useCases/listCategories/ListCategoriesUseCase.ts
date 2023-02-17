@@ -13,7 +13,7 @@ class ListCategoriesUseCase {
     this.categoriesRepository = categoriesRepository;
   }
 
-  execute(): Category[] {
+  execute(): Promise<Category[]> {
     const categories = this.categoriesRepository.list();
 
     return categories;
