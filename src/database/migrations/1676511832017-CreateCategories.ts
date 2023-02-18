@@ -13,7 +13,7 @@ export class CreateCategories1676511832017 implements MigrationInterface {
           },
           {
             name: "name",
-            type: "varchar",
+            type: "varchar"
           },
           {
             name: "description",
@@ -29,8 +29,5 @@ export class CreateCategories1676511832017 implements MigrationInterface {
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {
-
-    
-  }
+  public async down(queryRunner: QueryRunner): Promise<void> {}
 }
